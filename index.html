@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Music Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="music-player">
+        <!-- Album Art -->
+        <div class="album-art" id="albumArt">
+            🎵
+        </div>
+
+        <!-- Song Information -->
+        <div class="song-info">
+            <div class="song-title" id="songTitle">Select a Song</div>
+            <div class="song-artist" id="songArtist">Unknown Artist</div>
+            <div class="song-album" id="songAlbum">Unknown Album</div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="time-display">
+                <span id="currentTime">0:00</span>
+                <span id="totalTime">0:00</span>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button class="control-btn" id="prevBtn">⏮</button>
+            <button class="control-btn play-btn" id="playBtn">▶</button>
+            <button class="control-btn" id="nextBtn">⏭</button>
+        </div>
+
+        <!-- Volume Control -->
+        <div class="volume-container">
+            <span class="volume-icon" id="volumeIcon">🔊</span>
+            <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="50">
+        </div>
+
+        <!-- File Input -->
+        <div class="file-input-container">
+            <label for="fileInput" class="file-input-label">📁 Add Songs</label>
+            <input type="file" id="fileInput" class="file-input" accept="audio/*" multiple>
+        </div>
+
+        <!-- Playlist -->
+        <div class="playlist">
+            <div class="playlist-header">Playlist</div>
+            <div id="playlistContainer">
+                <div class="playlist-item" style="text-align: center; color: rgba(255, 255, 255, 0.6);">
+                    Add songs to start listening
+                </div>
+            </div>
+        </div>
+
+        <!-- Hidden Audio Element -->
+        <audio id="audioPlayer" preload="metadata"></audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
