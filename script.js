@@ -229,7 +229,20 @@ class MusicPlayer {
 
     // Handle song end
     songEnded() {
-        this.nextSong();
+        console.log('Song ended.');
+        // Check if there's a next song in the playlist
+        if (this.currentSongIndex < this.playlist.length - 1) {
+            console.log('Playing next song in sequence.');
+            this.nextSong(); // Play the next song
+        } else {
+            console.log('Last song ended. Stopping playback.');
+            this.audioPlayer.pause(); // Pause the audio
+            this.audioPlayer.currentTime = 0; // Reset current time to beginning
+            this.playBtn.textContent = '▶'; // Change play button to play icon
+            this.isPlaying = false; // Update playback state
+            this.updateProgress(); // Update progress bar to show it's at the start
+            this.updatePlaylistDisplay(); // Ensure active class is removed if desired
+        }
     }
 
     // Format time in MM:SS
